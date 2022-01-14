@@ -1,0 +1,305 @@
+/* CSCI 1170 Assignment 3 Stylesheet */
+
+/* The following specifies the font for the webpage. */
+
+body {
+  font-family: sans-serif;
+}
+
+/* Styling the main section to appear in the middle 
+of the webpage by setting the viewport width to 80 and 
+adjusting the margins. */
+
+#pg-main {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+/* The header is styled to have a steelblue 
+background color, a white color font, and the text is aligned 
+in the center.   */
+
+#pg-header {
+  background-color: steelblue;
+  color: white;
+  text-align: center;
+}
+
+/* The image is floated to the right in order to allow 
+the articles to fit beside it. The width of the image 
+is changed, the display propert is 'inline' and the 
+overflow is set to auto. */
+
+img {
+  float: right;
+  overflow: auto;
+  width: 350px;
+  display: inline;
+  margin: 0 5px;
+}
+
+/* The level 2 heading of the Featured News section is 
+aligned to the center, the margin property adds space
+around the heading to place it as required.*/
+
+#featured-news h2 {
+  text-align: center;
+  margin: 25px 250px;
+}
+
+/* The third and fourth level headings for both the first and second 
+articles in the Featured News section are aligned in the center. */
+
+#f-news1 h3,
+h4 {
+  text-align: center;
+}
+
+#f-news2 h3,
+h4 {
+  text-align: center;
+}
+
+/* The first aricle is placed to the left of the image and the second 
+article is to the right using the float property. Both articles have the 
+same width in order to stay in the center of the webpage. */
+
+#f-news1 {
+  float: left;
+  width: 49%;
+  overflow: auto;
+}
+
+#f-news2 {
+  float: right;
+  width: 49%;
+  overflow: auto;
+}
+
+/* The Hali Zone section does not have floating elements beside it 
+using the clear property. */
+
+#hali-zone {
+  clear: both;
+}
+
+/* The links in the header and nav are styled to have a yellow text color 
+and the line underneath the link is removed using the text decoration 
+property */
+
+header a:link {
+  color: yellow;
+  text-decoration-line: none;
+}
+
+nav a:link {
+  color: yellow;
+  text-decoration-line: none;
+}
+#nav a:hover {
+  color: yellow;
+}
+
+#nav a:visited {
+  color: yellow;
+}
+
+/* The links in the nav are placed on the same line as the
+level 2 heading and the bullet points are removed. */
+
+#nav h2,
+ul,
+li {
+  display: inline-block;
+}
+
+/* The background color of the navigation links is set to black. */
+
+nav {
+  background-color: black;
+}
+
+/* The padding property is used to generate more space around each navigation 
+link in the list item. */
+
+nav li {
+  padding: 10px;
+}
+
+/* The footer of the webpage is styled to have a black background and the
+text color is set to white. The padding property creates more space around the 
+footer. */
+
+#pg-footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+/* Placing the Dark Mode button at the top left corner of the webpage. The background color is set to silver 
+and there is a 10px padding. */
+
+button {
+  padding: 10px;
+  background-color: silver;
+  left: 0;
+  position: absolute;
+}
+
+/* The following are the styles that will be implemented when the Dark Mode button is clicked by the user. */
+
+/* Dark Mode: CSS-Tricks
+   Author: Adhuham
+   URL: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#toggling-themes
+   Date Accessed: 15 Mar 2021
+ */
+
+body.dark-mode {
+  color: white;
+  background: #1b1b2f;
+}
+
+body.dark-mode header {
+  background-color: #162447;
+}
+
+body.dark-mode nav {
+  background-color: #1f4068;
+}
+
+body.dark-mode main a {
+  color: #e43f5a;
+}
+
+/* tablet view */
+@media screen and (min-width: 840px) and (max-width: 1200px) {
+  main {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "fnews fnews  fnews  "
+      "halizone halizone halizone "
+      "natint edu healthwellness";
+  }
+/* The navigation list is styled differently other than the desktop view */
+
+  #nav h2 {
+    display: flex;
+    margin-left: 45px;
+  }
+
+  li {
+    margin-bottom: 1px;
+  }
+
+  ul li,
+  li a {
+    width: 100%;
+  }
+
+
+  #featured-news {
+    grid-area: fnews;
+  }
+
+  #hali-zone {
+    grid-area: halizone;
+  }
+
+  #nat-int {
+    grid-area: natint;
+  }
+
+  #edu {
+    grid-area: edu;
+  }
+
+  #health {
+    grid-area: healthwellness;
+    margin-left: 10px;
+  }
+
+  /* The navigation links text color changes to magneta when visited
+   and changes to a shade of purple when hovered over  */
+
+a:visited{
+  color: magenta;
+}
+
+a:hover {
+  color:mediumpurple
+}
+}
+
+/* mobile view */
+
+@media screen and (max-width: 840px) {
+ 
+
+  #nav h2 {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  li {
+    margin-bottom: 1px;
+  }
+
+  ul li,
+  li a {
+    width: 100%;
+  }
+
+  /* The navigation links text color changes to magneta when visited
+   and changes to a shade of purple when hovered over  */
+  
+  a:visited{
+    color: magenta;
+  }
+  
+  a:hover {
+    color:mediumpurple
+  }
+  
+  #pg-main {
+    display: grid;
+    width: 100vw;
+    margin: 0 auto;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas:
+      "fnews"
+      "halizone"
+      "natint"
+      "edu"
+      "healthwellness";
+  }
+
+  #featured-news {
+    display: inline-block;
+    grid-area: fnews;
+  }
+
+  
+  #hali-zone {
+    grid-area: halizone;
+    padding: 10px;
+  }
+
+  #nat-int {
+    grid-area: natint;
+    padding: 10px;
+  }
+
+  #edu {
+    grid-area: edu;
+    padding: 5px;
+  }
+
+  #health {
+    grid-area: healthwellness;
+    padding: 5px;
+  }
+}
